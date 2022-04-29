@@ -19,6 +19,8 @@ array <Cell, width * height> grid;
 array <int, 3> spcell = {
     index(1, 1), width - 2, height - 2
 };
+vector <Cell> Open;
+vector <Cell> Closed;
 
 int find_gcost(int x, int y, int end_cell_x, int end_cell_y) {
     if (x != end_cell_x) {
@@ -48,9 +50,15 @@ void evaluate_neighbors(int x, int y) {
 }
 
 int main() {
-    grid[index(1, 1)].start = true;
+    grid[spcell[0]].start = true;
     grid[index(spcell[1], spcell[2])].end = true;
 
-    
-
+    while (true) {
+        Cell current;
+        for (int i = 0; i < Open.size(); i++) {
+            if (grid[i].fcost < current.fcost) {
+                
+            }
+        }
+    }
 }
